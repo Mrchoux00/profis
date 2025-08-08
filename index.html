@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Profis by Joaquín Solís</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF3E6; --ink:#1c1c1c; --muted:#6d6d6d; --accent:#E89B6C; --card:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+h1,h2,h3{font-family:'Playfair Display',serif;letter-spacing:-.3px}
+.container{width:min(1100px,92%);margin:0 auto}
+a{color:inherit}
+/* Hero */
+.hero{min-height:72vh;display:grid;place-items:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...TRUNCATED...') center/cover no-repeat;filter:contrast(1.05) saturate(1.05)}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.35))}
+.hero .inner{position:relative;z-index:1;text-align:center;color:#fff;padding:48px 16px}
+.hero h1{font-size:clamp(32px,5vw,56px)}
+.hero p{color:#f3f3f3;margin-top:8px}
+.hero .cta{margin-top:16px}
+.btn{display:inline-block;background:#111;color:#fff;border-radius:12px;padding:12px 18px;font-weight:800;text-decoration:none}
+.btn:hover{filter:brightness(.9)}
+/* Slider */
+.section{padding:48px 0}
+.slider-wrap{position:relative}
+.slider{display:flex;gap:16px;overflow:hidden;scroll-behavior:smooth}
+.slide{flex:0 0 100%;max-width:100%}
+.card{background:var(--card);border-radius:18px;box-shadow:0 10px 24px rgba(0,0,0,.08);overflow:hidden}
+.card .media{aspect-ratio:1/1;background:#0002}
+.card img{width:100%;height:100%;object-fit:cover;display:block}
+.slider-nav{display:flex;justify-content:space-between;margin-top:10px}
+.nav-btn{background:#fff;border:1px solid #0002;border-radius:999px;width:42px;height:42px;display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 14px rgba(0,0,0,.08)}
+/* Gallery */
+.gallery{columns:3 280px;column-gap:12px;margin-top:12px}
+.gallery figure{break-inside:avoid;margin:0 0 12px 0;border-radius:14px;overflow:hidden;box-shadow:0 8px 18px rgba(0,0,0,.08)}
+.gallery img{width:100%;display:block;transition:transform .35s ease;transform-origin:center}
+.gallery figure:hover img{transform:scale(1.04)}
+/* WhatsApp Float */
+.whatsapp{position:fixed;right:18px;bottom:18px;z-index:20;background:#25D366;color:#fff;border-radius:999px;width:56px;height:56px;display:grid;place-items:center;font-weight:900;text-decoration:none;box-shadow:0 10px 24px rgba(0,0,0,.18)}
+/* Footer */
+.footer{padding:32px 0;background:#111;color:#eee;margin-top:24px}
+.footer a{color:#fff;text-decoration:underline}
+/* Responsive */
+@media (max-width: 900px){
+  .slide{flex-basis:100%}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="inner">
+    <h1>Profis by Joaquín Solís</h1>
+    <p>Profiteroles artesanales, frescos cada día</p>
+    <div class="cta"><a href="#sabores" class="btn">Ver sabores</a></div>
+  </div>
+</header>
+
+<main>
+  <!-- Slider Sabores -->
+  <section id="sabores" class="section">
+    <div class="container">
+      <h2 style="margin-bottom:8px">Sabores</h2>
+      <p style="color:var(--muted)">Desliza para ver. Precio y descripción tal cual en las imágenes.</p>
+      <div class="slider-wrap">
+        <div class="slider" id="slider">
+          <div class="slide"><article class="card"><div class="media"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...TRUNCATED..." alt="Sabor"></div></article></div>
+          <div class="slide"><article class="card"><div class="media"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...TRUNCATED..." alt="Sabor"></div></article></div>
+          <div class="slide"><article class="card"><div class="media"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...TRUNCATED..." alt="Sabor"></div></article></div>
+        </div>
+        <div class="slider-nav">
+          <button class="nav-btn" id="prev" aria-label="Anterior">‹</button>
+          <button class="nav-btn" id="next" aria-label="Siguiente">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galería -->
+  <section class="section" id="galeria" style="background:#fff8f0">
+    <div class="container">
+      <h2 style="margin-bottom:8px">Galería</h2>
+      <p style="color:var(--muted)">Un vistazo a nuestros profis</p>
+      <div class="gallery">
+        <figure><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...TRUNCATED..." alt="Profi"></figure>
+        <figure><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...TRUNCATED..." alt="Profi"></figure>
+        <figure><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...TRUNCATED..." alt="Profi"></figure>
+        <figure><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...TRUNCATED..." alt="Profi"></figure>
+        <figure><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...TRUNCATED..." alt="Profi"></figure>
+        <figure><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...TRUNCATED..." alt="Profi"></figure>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- WhatsApp floating button -->
+<a class="whatsapp" href="https://wa.me/51980906535?text=%C2%A1Hola!%20Estoy%20interesado%20en%20los%20profiteroles%20%F0%9F%8D%AB%F0%9F%8D%B0" target="_blank" aria-label="WhatsApp">WA</a>
+
+<footer class="footer">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+    <div><strong>Profis</strong> — Hecho con amor en Lima, Perú</div>
+    <div>Instagram: <a href="https://instagram.com/joaquin.solisa" target="_blank">@joaquin.solisa</a></div>
+  </div>
+</footer>
+
+<script>
+// Smooth scroll for CTA
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click', e=>{
+  const id = a.getAttribute('href').slice(1);
+  const el = document.getElementById(id);
+  if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+}));
+
+// Simple slider with random start and auto-play
+const track = document.getElementById('slider');
+const slides = Array.from(track.children);
+let idx = Math.floor(Math.random() * slides.length);
+let width = () => track.clientWidth;
+function go(i){
+  idx = (i + slides.length) % slides.length;
+  track.scrollTo({left: idx * width(), behavior:'smooth'});
+}
+window.addEventListener('resize', ()=> go(idx));
+document.getElementById('prev').onclick = ()=> go(idx-1);
+document.getElementById('next').onclick = ()=> go(idx+1);
+setTimeout(()=> go(idx), 300); // initial snap
+setInterval(()=> go(idx+1), 4000); // autoplay
+</script>
+</body>
+</html>
