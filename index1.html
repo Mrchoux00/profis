@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profis by Joaquín Solís — Profiteroles artesanales</title>
+  <meta name="description" content="Pequeñas delicias, grandes momentos. Profiteroles artesanales hechos en Lima.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Profis by Joaquín Solís">
+  <meta property="og:description" content="Pequeñas delicias, grandes momentos. Profiteroles artesanales hechos en Lima.">
+  <meta property="og:image" content="https://mrchoux00.github.io/profis/assets/hero.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    :root{ --bg:#FFF3E6; --ink:#1c1c1c; --muted:#6d6d6d; --accent:#E89B6C; --card:#fff; --soft:#ffeec2; }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+    h1,h2,h3{font-family:'Playfair Display',serif;letter-spacing:-.3px}
+    .container{width:min(1100px,92%);margin:0 auto}
+    a{color:inherit}
+    /* Topbar simple */
+    .topbar{position:sticky;top:0;z-index:10;background:rgba(255,243,230,.9);backdrop-filter:blur(6px);border-bottom:1px solid #0001}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;gap:8px;align-items:flex-end}
+    .brand .logo{font-family:'Playfair Display',serif;font-weight:700;font-size:22px}
+    nav a{margin-left:16px;text-decoration:none;color:var(--ink);font-weight:600}
+    nav a.cta{padding:8px 14px;border:1px solid var(--ink);border-radius:999px}
+    nav a.cta:hover{background:var(--ink);color:#fff}
+    /* Hero */
+    .hero{min-height:70vh;display:grid;place-items:center;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:url('assets/hero.jpg') center/cover no-repeat;filter:contrast(1.04) saturate(1.04)}
+    .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.35))}
+    .hero .inner{position:relative;z-index:1;text-align:center;color:#fff;padding:48px 16px}
+    .hero h1{font-size:clamp(32px,5vw,56px)}
+    .hero p{color:#f3f3f3;margin-top:8px}
+    .btn{display:inline-block;background:#111;color:#fff;border-radius:12px;padding:12px 18px;font-weight:800;text-decoration:none}
+    .btn:hover{filter:brightness(.9)}
+    .cta-row{display:flex;justify-content:center;margin-top:14px}
+    /* Secciones */
+    .section{padding:48px 0}
+    /* Slider */
+    .slider-wrap{position:relative}
+    .slider{display:flex;gap:16px;overflow:hidden;scroll-behavior:smooth}
+    .slide{flex:0 0 100%;max-width:100%}
+    .card{background:var(--card);border-radius:18px;box-shadow:0 10px 24px rgba(0,0,0,.08);overflow:hidden}
+    .card .media{aspect-ratio:1/1;background:#0002}
+    .card img{width:100%;height:100%;object-fit:cover;display:block}
+    .slider-nav{display:flex;justify-content:space-between;margin-top:10px}
+    .nav-btn{background:#fff;border:1px solid #0002;border-radius:999px;width:42px;height:42px;display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 14px rgba(0,0,0,.08)}
+    /* Price box (opcional) */
+    .price-box{margin-top:22px;display:flex;align-items:center;justify-content:space-between;background:var(--soft);padding:16px 18px;border-radius:14px;border:1px dashed #0002}
+    .price{font-size:32px;font-weight:800}
+    /* Galería */
+    .galeria{background:#fff8f0}
+    .gallery{columns:3 280px;column-gap:12px;margin-top:12px}
+    .gallery figure{break-inside:avoid;margin:0 0 12px 0;border-radius:14px;overflow:hidden;box-shadow:0 8px 18px rgba(0,0,0,.08)}
+    .gallery img{width:100%;display:block;transition:transform .35s ease;transform-origin:center}
+    .gallery figure:hover img{transform:scale(1.04)}
+    /* WhatsApp Float */
+    .whatsapp{position:fixed;right:18px;bottom:18px;z-index:20;background:#25D366;color:#fff;border-radius:999px;width:56px;height:56px;display:grid;place-items:center;font-weight:900;text-decoration:none;box-shadow:0 10px 24px rgba(0,0,0,.18)}
+    /* Footer */
+    .footer{padding:32px 0;background:#111;color:#eee;margin-top:24px}
+    .footer a{color:#fff;text-decoration:underline}
+    /* Responsive */
+    @media (max-width:900px){ .slide{flex-basis:100%} }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand"><span class="logo">Profis</span><small>by Joaquín Solís</small></div>
+      <nav>
+        <a href="#sabores">Sabores</a>
+        <a href="#galeria">Galería</a>
+        <a href="https://instagram.com/joaquin.solisa" target="_blank">@joaquin.solisa</a>
+        <a class="cta" href="https://wa.me/51980906535?text=%C2%A1Hola!%20Estoy%20interesado%20en%20los%20profiteroles%20%F0%9F%8D%AB%F0%9F%8D%B0" target="_blank">WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="inner">
+      <h1>Pequeñas delicias, grandes momentos</h1>
+      <p>Profiteroles artesanales, frescos cada día</p>
+      <div class="cta-row"><a href="#sabores" class="btn">Ver sabores</a></div>
+    </div>
+  </section>
+
+  <main>
+    <!-- Slider Sabores -->
+    <section id="sabores" class="section">
+      <div class="container">
+        <h2 style="margin-bottom:8px">Sabores</h2>
+        <p style="color:var(--muted)">Desliza para ver. Precio y descripción tal cual en las imágenes.</p>
+        <div class="slider-wrap">
+          <div class="slider" id="slider">
+            <div class="slide"><article class="card"><div class="media"><img src="assets/chocolate.jpg" alt="Chocolate 53%"></div></article></div>
+            <div class="slide"><article class="card"><div class="media"><img src="assets/vainilla.jpg" alt="Vainilla Bourbon"></div></article></div>
+            <div class="slide"><article class="card"><div class="media"><img src="assets/cafe.jpg" alt="Cheesecake de café"></div></article></div>
+          </div>
+          <div class="slider-nav">
+            <button class="nav-btn" id="prev" aria-label="Anterior">‹</button>
+            <button class="nav-btn" id="next" aria-label="Siguiente">›</button>
+          </div>
+        </div>
+        <!-- Caja/precio (opcional)
+        <div class="price-box">
+          <div><h4>Caja de 3</h4><p class="price">S/15</p></div>
+        </div>
+        -->
+      </div>
+    </section>
+
+    <!-- Galería -->
+    <section id="galeria" class="section galeria">
+      <div class="container">
+        <h2 style="margin-bottom:8px">Galería</h2>
+        <p style="color:var(--muted)">Un vistazo a nuestros profis</p>
+        <div class="gallery">
+          <figure><img src="assets/g1.jpg" alt="Profi 1"></figure>
+          <figure><img src="assets/g2.jpg" alt="Profi 2"></figure>
+          <figure><img src="assets/g3.jpg" alt="Profi 3"></figure>
+          <figure><img src="assets/g4.jpg" alt="Profi 4"></figure>
+          <figure><img src="assets/g5.jpg" alt="Profi 5"></figure>
+          <figure><img src="assets/g6.jpg" alt="Profi 6"></figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- WhatsApp floating button -->
+  <a class="whatsapp" href="https://wa.me/51980906535?text=%C2%A1Hola!%20Estoy%20interesado%20en%20los%20profiteroles%20%F0%9F%8D%AB%F0%9F%8D%B0" target="_blank" aria-label="WhatsApp">WA</a>
+
+  <footer class="footer">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div><strong>Profis</strong> — Hecho con amor en Lima, Perú</div>
+      <div>Instagram: <a href="https://instagram.com/joaquin.solisa" target="_blank">@joaquin.solisa</a></div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll para "Ver sabores"
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click', e=>{
+      const id = a.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+    }));
+    // Slider simple con inicio aleatorio + autoplay
+    const track = document.getElementById('slider');
+    const slides = Array.from(track.children);
+    let idx = Math.floor(Math.random() * slides.length);
+    let width = () => track.clientWidth;
+    function go(i){
+      idx = (i + slides.length) % slides.length;
+      track.scrollTo({left: idx * width(), behavior:'smooth'});
+    }
+    window.addEventListener('resize', ()=> go(idx));
+    document.getElementById('prev').onclick = ()=> go(idx-1);
+    document.getElementById('next').onclick = ()=> go(idx+1);
+    setTimeout(()=> go(idx), 300);          // primer snap
+    setInterval(()=> go(idx+1), 3800);      // autoplay
+  </script>
+</body>
+</html>
